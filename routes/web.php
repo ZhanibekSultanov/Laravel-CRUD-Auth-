@@ -29,3 +29,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::prefix('workers')->group(function (){
+   Route::get('/',[\App\Http\Controllers\WorkerController::class,'index'])->name('workers.index');
+});
