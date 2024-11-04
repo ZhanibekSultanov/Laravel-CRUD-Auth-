@@ -16,10 +16,10 @@
         @foreach($workers as $worker)
             <tr>
                 <th scope="row">{{ $worker->id }}</th>
-                <td>{{ $worker->name }}</td>
-                <td>{{ $worker->surname }}</td>
-                <td>{{ $worker->email }}</td>
-                <td>{{ $worker->age }}</td>
+                <td><a href="{{ route('workers.show',$worker->id) }}">{{ $worker->name }}</a></td>
+                <td><a href="{{ route('workers.show',$worker->id) }}">{{ $worker->surname }}</a></td>
+                <td><a href="{{ route('workers.show',$worker->id) }}">{{ $worker->email }}</a></td>
+                <td><a href="{{ route('workers.show',$worker->id) }}">{{ $worker->age }}</a></td>
             </tr>
         @endforeach
         </tbody>

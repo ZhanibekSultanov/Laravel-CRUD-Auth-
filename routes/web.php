@@ -32,4 +32,5 @@ require __DIR__.'/auth.php';
 
 Route::prefix('workers')->group(function (){
    Route::get('/',[\App\Http\Controllers\WorkerController::class,'index'])->name('workers.index');
+   Route::get('/{worker}',[\App\Http\Controllers\WorkerController::class,'show'])->name('workers.show');
 });
