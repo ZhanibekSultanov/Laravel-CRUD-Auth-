@@ -23,6 +23,9 @@
                 <td><a href="{{ route('workers.show',$worker->id) }}">{{ $worker->surname }}</a></td>
                 <td><a href="{{ route('workers.show',$worker->id) }}">{{ $worker->email }}</a></td>
                 <td><a href="{{ route('workers.show',$worker->id) }}">{{ $worker->age }}</a></td>
+                <td>
+                    <a href="{{ route('workers.edit',$worker->id) }}" class="btn btn-warning">Edit</a>
+                </td>
             </tr>
         @endforeach
         </tbody>

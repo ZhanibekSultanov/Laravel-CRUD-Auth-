@@ -35,4 +35,6 @@ Route::prefix('workers')->group(function (){
    Route::get('/create',[\App\Http\Controllers\WorkerController::class,'create'])->name('workers.create');
    Route::post('/',[\App\Http\Controllers\WorkerController::class,'store'])->name('workers.store');
    Route::get('/{worker}',[\App\Http\Controllers\WorkerController::class,'show'])->name('workers.show');
+   Route::get('/{worker}/edit',[\App\Http\Controllers\WorkerController::class,'edit'])->name('workers.edit');
+   Route::patch('/{worker}',[\App\Http\Controllers\WorkerController::class,'update'])->name('workers.update');
 });
