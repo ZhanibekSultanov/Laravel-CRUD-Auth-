@@ -1,6 +1,9 @@
 @extends('layout.main')
 
 @section('content')
+    <div class="m-2">
+        <a href="{{ route('workers.create') }}" class="btn btn-info">Create</a>
+    </div>
     <table class="table m-3">
         <thead>
         <tr>
