@@ -43,4 +43,10 @@ class WorkerController extends Controller
         $worker->update($data);
         return redirect()->route('workers.show',$worker->id);
     }
+
+    public function delete(Worker $worker){
+        $worker->delete();
+
+        return redirect()->route('workers.index');
+    }
 }

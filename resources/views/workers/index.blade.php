@@ -24,7 +24,12 @@
                 <td><a href="{{ route('workers.show',$worker->id) }}">{{ $worker->email }}</a></td>
                 <td><a href="{{ route('workers.show',$worker->id) }}">{{ $worker->age }}</a></td>
                 <td>
-                    <a href="{{ route('workers.edit',$worker->id) }}" class="btn btn-warning">Edit</a>
+                    <a href="{{ route('workers.edit',$worker->id) }}" class="btn btn-warning m-1">Edit</a>
+                    <form action="{{ route('workers.delete',$worker->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger m-1">Delete</button>
+                    </form>
                 </td>
             </tr>
         @endforeach

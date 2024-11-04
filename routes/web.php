@@ -37,4 +37,5 @@ Route::prefix('workers')->group(function (){
    Route::get('/{worker}',[\App\Http\Controllers\WorkerController::class,'show'])->name('workers.show');
    Route::get('/{worker}/edit',[\App\Http\Controllers\WorkerController::class,'edit'])->name('workers.edit');
    Route::patch('/{worker}',[\App\Http\Controllers\WorkerController::class,'update'])->name('workers.update');
+   Route::delete('/{worker}/delete',[\App\Http\Controllers\WorkerController::class,'delete'])->name('workers.delete');
 });
