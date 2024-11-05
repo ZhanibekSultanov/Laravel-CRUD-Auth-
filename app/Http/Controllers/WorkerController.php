@@ -63,4 +63,11 @@ class WorkerController extends Controller
 
         return redirect()->route('workers.trashed');
     }
+
+    public function forceDelete($worker){
+        $worker = Worker::withTrashed()->find($worker);
+        $worker->forceDelete();
+
+        return redirect()->route('workers.trashed');
+    }
 }

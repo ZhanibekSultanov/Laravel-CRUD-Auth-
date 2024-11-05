@@ -25,6 +25,11 @@
                 <td>{{ $worker->age }}</td>
                 <td>
                     <a href="{{ route('workers.restore',$worker->id) }}" class="btn btn-warning m-1">Restore</a>
+                    <form action="{{ route('workers.forceDelete',$worker->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger m-1">Delete</button>
+                    </form>
                 </td>
             </tr>
         @endforeach

@@ -40,6 +40,7 @@ Route::prefix('workers')->group(function (){
 
    Route::get('/trashed',[\App\Http\Controllers\WorkerController::class,'trashed'])->name('workers.trashed');
    Route::get('/trashed/{restore}',[\App\Http\Controllers\WorkerController::class,'restore'])->name('workers.restore');
+   Route::delete('/trashed/{forceDelete}',[\App\Http\Controllers\WorkerController::class,'forceDelete'])->name('workers.forceDelete');
 
    Route::get('/{worker}',[\App\Http\Controllers\WorkerController::class,'show'])->name('workers.show');
 
