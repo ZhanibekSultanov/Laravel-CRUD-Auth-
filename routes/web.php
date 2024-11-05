@@ -34,8 +34,14 @@ Route::prefix('workers')->group(function (){
    Route::get('/',[\App\Http\Controllers\WorkerController::class,'index'])->name('workers.index');
    Route::get('/create',[\App\Http\Controllers\WorkerController::class,'create'])->name('workers.create');
    Route::post('/',[\App\Http\Controllers\WorkerController::class,'store'])->name('workers.store');
-   Route::get('/{worker}',[\App\Http\Controllers\WorkerController::class,'show'])->name('workers.show');
    Route::get('/{worker}/edit',[\App\Http\Controllers\WorkerController::class,'edit'])->name('workers.edit');
    Route::patch('/{worker}',[\App\Http\Controllers\WorkerController::class,'update'])->name('workers.update');
    Route::delete('/{worker}/delete',[\App\Http\Controllers\WorkerController::class,'delete'])->name('workers.delete');
+
+   Route::get('/trashed',[\App\Http\Controllers\WorkerController::class,'trashed'])->name('workers.trashed');
+   Route::get('/trashed/{restore}',[\App\Http\Controllers\WorkerController::class,'restore'])->name('workers.restore');
+
+   Route::get('/{worker}',[\App\Http\Controllers\WorkerController::class,'show'])->name('workers.show');
+
+
 });

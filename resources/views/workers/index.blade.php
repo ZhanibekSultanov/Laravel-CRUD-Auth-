@@ -3,6 +3,7 @@
 @section('content')
     <div class="m-2">
         <a href="{{ route('workers.create') }}" class="btn btn-info">Create</a>
+        <a href="{{ route('workers.trashed') }}" class="btn btn-secondary">Trashed</a>
     </div>
     <table class="table m-3">
         <thead>

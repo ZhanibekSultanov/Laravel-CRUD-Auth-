@@ -49,4 +49,18 @@ class WorkerController extends Controller
 
         return redirect()->route('workers.index');
     }
+
+    public function trashed(){
+        $workers = Worker::onlyTrashed()->get();
+
+        return view('workers.trashed',compact('workers'));
+    }
+
+    public function restore($worker){
+        $worker = Worker::withTrashed()->find($worker);
+
+        $worker->restore();
+
+        return redirect()->route('workers.trashed');
+    }
 }
